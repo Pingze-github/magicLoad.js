@@ -2,7 +2,7 @@
 
 A dynamic loading .js. Load your elements when they are really can be seen.
 
-一个用于元素动态加载的.js。使特定元素在**确实可见**时被加载。
+一个用于图片动态加载的.js。使特定图片在**确实可见**时被加载。
 
 ## Usage
 Notice: Need JQuery
