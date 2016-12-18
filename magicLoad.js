@@ -118,7 +118,7 @@ function magicLoad(ele,option={}){
                     if (ele_bottom<load_area[0] || ele_top>load_area[1])
                         visible=false;
                     break;
-                case 7:break; //暂不支持
+                case 7:break; //not support now
             }
             if (!visible){
                 return;
