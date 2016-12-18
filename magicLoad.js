@@ -72,13 +72,13 @@ function magicLoad(ele,option={}){
             7. is totally covered by opaque element ? (not support now)
         */
         /*规则:
-            1.是否 display:none / visibility:hidden
-            2.是否完全透明
-            3.是否 height:0 / width:0
-            4.是否超出父元素显示区域，而父元素 overflow:hidden 而被隐藏
-            5.是否处于屏幕中可见区域（仅考虑高度）
-            6.是否处于一定比例于屏幕的区域中（仅考虑高度）  
-            7.是否被不透明层完全遮盖（暂不支持）
+            1. 是否 display:none / visibility:hidden
+            2. 是否完全透明
+            3. 是否 height:0 / width:0
+            4. 是否超出父元素显示区域，而父元素 overflow:hidden 而被隐藏
+            5. 是否处于屏幕中可见区域（仅考虑高度）
+            6. 是否处于一定比例于屏幕的区域中（仅考虑高度）  
+            7. 是否被不透明层完全遮盖（暂不支持）
         */
         var visible = true;
         var set_top = window.pageYOffset;
@@ -114,7 +114,7 @@ function magicLoad(ele,option={}){
                     var ele_height = ele.parent().height(); //img元素本身初始高度1px,取父元素高度
                     var ele_top = ele.offset().top;
                     var ele_bottom=ele.offset().top+ele_height;
-                    var load_area = [load_screen[0]*window.pageYOffset, window.pageYOffset+load_screen[1]*window.innerHeight];
+                    var load_area = [window.pageYOffset-load_screen[1]*window.innerHeight, window.pageYOffset+load_screen[1]*window.innerHeight];
                     if (ele_bottom<load_area[0] || ele_top>load_area[1])
                         visible=false;
                     break;
