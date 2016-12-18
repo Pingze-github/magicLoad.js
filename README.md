@@ -11,13 +11,18 @@ Need JQuery2+.
 ## Usage
 Example:
 ```
+<body>
+<img src='loading.gif' xsrc='theRealUrlOfImage.jpg'>
+</body>
 <script language="JavaScript" src="js/magicLoad.js"></script>
 <script language="JavaScript" >
-    magicLoad($("#main"),{
+    magicLoad($("body"),{
         rule_list:[5]
-    });
+    }); #This option means all imgs in body will be loaded when they move into the region you can see (means "screen region").
 </script>
 ```
+If you want a img to support magicLoad, give it a "xsrc" as the real url of the image, and a "src" to show it before it is loaded. 
+
 Register function:
 ```
 magicLoad(content_ele,option_dict)
@@ -42,3 +47,8 @@ magicLoad(content_ele,option_dict)
 + size_ele  :Optional(effective with Rule3). Means the element whoes "width" or "height" changes. Default as the img itself.
 + overflow_ele  :Optional(effective with Rule4). Means the element that the imgs overflow from. Default as ```img_ele.parent()```
 + load_screen  :Optional(effective with Rule6). A 2-length list means the ratio to default screen region. Default as ```load_screen:[0,1]```. e.g. ```[0,2]``` means img will load when it goes into the screen you see and the screen next. You can use this to preload imgs before it can be seen.
+
+#### Note
+1. You can use magicLoad() for many times in single page. Every magicLoad() will work independently. So try not to register the same img twice.
+2. If some imgs in your page are created some time after the page is loaded, magicLoad cannot register them before they are really in the document. So try to use magicLoad() again after them are created specially.
+3. The magicLoad will stop checking the img which is loaded or deleted automatically.
