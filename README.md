@@ -35,10 +35,10 @@ magicLoad(content_ele,option_dict)
 7. is totally covered by opaque element ? (not support now)
 
 #### Options
-+ . rule_list  :Necessary. A list contains the Rules (above) you need. Use it like ```rule_list:[1,2,3,5]```.
-+ . scroll_ele  :Optional. Means the element that scroll, default as ```$(document)```.(Sometimes just part of your page can scroll).
-+ . display_ele  :Optional. 
-+ . opacity_ele  :Optional.
-+ . size_ele  :Optional.
-+ . overflow_ele  :Optional(effective with Rule4). Means the element that the imgs overflow from. Default as ```img_ele.parent()```
-+ . load_screen  :Optional(effective with Rule6). A 2-length list means the ratio to default screen region. Default as ```load_screen:[0,1]```. e.g. ```[0,2]``` means img will load when it goes into the screen you see and the screen next. You can use this to preload imgs before it can be seen.
++ rule_list  :Necessary. A list contains the Rules (above) you need. Use it like ```rule_list:[1,2,3,5]```.
++ scroll_ele  :Optional. Means the element that scroll, default as ```$(document)```.(Sometimes just part of your page can scroll).
++ display_ele  :Optional(effective with Rule1). Means the element whoes "display" or "visibility" changes. Default as the img itself.
++ opacity_ele  :Optional(effective with Rule2). Means the element whoes "opacity" changes. Default as the img itself.
++ size_ele  :Optional(effective with Rule3). Means the element whoes "width" or "height" changes. Default as the img itself.
++ overflow_ele  :Optional(effective with Rule4). Means the element that the imgs overflow from. Default as ```img_ele.parent()```
++ load_screen  :Optional(effective with Rule6). A 2-length list means the ratio to default screen region. Default as ```load_screen:[0,1]```. e.g. ```[0,2]``` means img will load when it goes into the screen you see and the screen next. You can use this to preload imgs before it can be seen.
